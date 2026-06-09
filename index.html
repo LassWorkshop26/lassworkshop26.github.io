@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LASS @ CIKM 2026 — LLM Agents for Social Simulation</title>
+  <meta name="description" content="The 2nd Workshop on LLM Agents for Social Simulation (LASS), co-located with CIKM 2026, Rome, Italy. Theme: Fundamental Challenges and Real-World Applications.">
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Georgia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ── Theme Toggle Button ────────────────────────────────── -->
+<button id="theme-toggle" title="Toggle light/dark mode">🌙</button>
+
+<!-- ── Fixed Navbar ──────────────────────────────────────── -->
+<nav id="navbar">
+  <button id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div id="nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#dates">Dates</a>
+    <a href="#cfp">Call for Papers</a>
+    <a href="#speakers">Speakers</a>
+    <a href="#program">Program</a>
+    <a href="#organizers">Organizers</a>
+    <a href="#archive">LASS 2025</a>
+  </div>
+</nav>
+
+<!-- ── Hero Banner ───────────────────────────────────────── -->
+<section id="hero">
+  <img id="hero-img-dark"  class="hero-img" src="assets/rome.jpg"     alt="Rome Colosseum at dusk">
+  <img id="hero-img-light" class="hero-img" src="assets/rome-day.jpg" alt="Rome Colosseum by day">
+  <div class="hero-content">
+    <div class="hero-tag">2nd Edition &nbsp;·&nbsp; LASS Workshop</div>
+    <h1 class="hero-title">
+      The 2nd Workshop on LLM Agents<br>for Social Simulation
+    </h1>
+    <p class="hero-subtitle">Fundamental Challenges and Real-World Applications</p>
+    <p class="hero-meta">
+      <span>📅 November 8, 2026</span>
+      <span class="sep">|</span>
+      <span>📍 Rome, Italy</span>
+      <span class="sep">|</span>
+      <span>Co-located with <strong>CIKM 2026</strong></span>
+    </p>
+    <a href="#cfp" class="cta-btn">Submit Your Paper →</a>
+  </div>
+</section>
+
+<!-- ── Overview ──────────────────────────────────────────── -->
+<section id="overview">
+  <div class="section">
+    <h2 class="section-title">Overview</h2>
+
+    <p>
+      Social simulation plays an important role in domains where human studies face practical
+      constraints, such as sociology, psychology, medicine, and education. Conventional social
+      simulations often relied on rule-based, statistical, or mechanistic models with predefined
+      assumptions, which can oversimplify the complexity, diversity, and context dependence of
+      real-world human behavior.
+    </p>
+    <p>
+      Recent advances in Large Language Models (LLMs) offer a promising opportunity by enabling
+      agents to interpret contextual information, perform flexible reasoning, and adapt their
+      behaviors to evolving environments, thereby opening new frontiers for modeling human behavior,
+      social interactions, and collective dynamics in support of controlled analysis, counterfactual
+      reasoning, and decision support.
+    </p>
+    <p>
+      Despite these opportunities, developing LLM-agent-based social simulations also raises
+      significant challenges — including how to model personas and domain knowledge; how to evaluate
+      and analyze simulated behaviors; how to mitigate risks and ensure safety, ethics, and
+      accountability, especially in error-sensitive domains; and how to build scalable infrastructure
+      for large-scale and long-horizon simulations.
+    </p>
+    <p>
+      Themed <strong>"Fundamental Challenges and Real-World Applications"</strong>, the second LASS
+      workshop aims to bring together researchers and practitioners from diverse disciplines to explore
+      how LLM agents can be more faithfully modeled, rigorously evaluated, safely governed, and
+      effectively applied to address real-world problems in vertical domains — with careful
+      consideration of their unique requirements, challenges, and practical limitations, thereby
+      promoting human well-being and broader societal benefit.
+    </p>
+    <p>
+      Building on the success of <strong>LASS 2025 (CIKM 2025, Seoul)</strong> — which attracted
+      around 25 participants, received 15 valid submissions (each with 2–3 reviews), accepted 8 papers,
+      presented <strong>3 LASS Outstanding Paper Awards</strong>, and recommended 3 papers for
+      fast-track consideration to JCST — this second edition will further emphasize real-world
+      vertical-domain applications, with stronger attention to expert knowledge, domain-specific
+      safety and ethical requirements, and pathways toward responsible real-world deployment.
+    </p>
+
+    <!-- LASS 2025 At-a-Glance stats -->
+    <div class="stats-banner">
+      <div class="stat-block">
+        <span class="s-num">~25</span>
+        <span class="s-label">LASS 2025<br>Participants</span>
+      </div>
+      <div class="stat-block">
+        <span class="s-num">15</span>
+        <span class="s-label">Submissions<br>Received</span>
+      </div>
+      <div class="stat-block">
+        <span class="s-num">8</span>
+        <span class="s-label">Papers<br>Accepted</span>
+      </div>
+      <div class="stat-block">
+        <span class="s-num">3</span>
+        <span class="s-label">Outstanding<br>Paper Awards</span>
+      </div>
+      <div class="stat-block">
+        <span class="s-num">3</span>
+        <span class="s-label">JCST<br>Fast-Track</span>
+      </div>
+    </div>
+
+    <!-- Why Submit to LASS -->
+    <div class="why-submit-grid">
+      <div class="why-card">
+        <div class="why-heading">Best LASS Paper Award</div>
+        <div class="why-body">Outstanding contributions recognized with a <strong>formal certificate</strong> presented at the <strong>closing ceremony</strong> in front of the full CIKM audience.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-heading">Fast-Track to JCST (CCF-B)</div>
+        <div class="why-body">Accepted papers are eligible for <strong>fast-track recommendation</strong> to the <em>Journal of Computer Science and Technology</em> (<strong>JCST, CCF-B</strong>), subject to authors' consent.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-heading">Guaranteed Oral Presentation</div>
+        <div class="why-body"><strong>Every accepted paper</strong> receives a dedicated <strong>oral presentation slot</strong> with moderated Q&amp;A, maximizing visibility at CIKM 2026.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-heading">Interdisciplinary Community</div>
+        <div class="why-body">Connect with <strong>30–50 expected attendees</strong> spanning AI, NLP, HCI, social science, <strong>healthcare, education</strong>, and public governance worldwide.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Important Dates ────────────────────────────────────── -->
+<div class="section-alt" id="dates">
+  <div class="section">
+    <h2 class="section-title">Important Dates</h2>
+    <div class="dates-grid">
+      <div class="date-card">
+        <div class="label">Submission Open</div>
+        <div class="value">July 22, 2026</div>
+      </div>
+      <div class="date-card highlight">
+        <div class="label">Submission Deadline</div>
+        <div class="value">August 22, 2026</div>
+      </div>
+      <div class="date-card">
+        <div class="label">Acceptance Notification</div>
+        <div class="value">September 22, 2026</div>
+      </div>
+      <div class="date-card">
+        <div class="label">Camera-Ready Due</div>
+        <div class="value">November 1, 2026</div>
+      </div>
+      <div class="date-card">
+        <div class="label">Workshop Day</div>
+        <div class="value">November 8, 2026</div>
+      </div>
+    </div>
+    <p style="margin-top:20px; font-size:0.88rem; color:var(--text-muted);">
+      All deadlines are 23:59 Anywhere on Earth (AoE). The timeline is preliminary and may be
+      adjusted to align with CIKM 2026 Workshop Chairs' requirements.
+    </p>
+  </div>
+</div>
+
+<!-- ── Call for Papers ────────────────────────────────────── -->
+<section id="cfp">
+  <div class="section">
+    <h2 class="section-title">Call for Papers</h2>
+
+    <p class="cfp-intro">
+      By fostering dialogue among AI, NLP, HCI, and a broad range of vertical domains, LASS aims
+      to advance LLM-agent-based social simulations that are technically faithful, safe, ethical,
+      and responsive to the unique requirements of vertical domains. We welcome original submissions
+      that contribute to one or more of the following thematic axes:
+    </p>
+
+    <div class="domain-tags-wrap">
+      <div class="domain-tags-label">Target Communities &amp; Domains</div>
+      <div class="domain-tags">
+        <span class="domain-tag">AI &amp; NLP</span>
+        <span class="domain-tag">HCI</span>
+        <span class="domain-tag">Social Science</span>
+        <span class="domain-tag">Psychology</span>
+        <span class="domain-tag">Healthcare &amp; Medicine</span>
+        <span class="domain-tag">Education</span>
+        <span class="domain-tag">Public Governance</span>
+        <span class="domain-tag">Economics &amp; Policy</span>
+        <span class="domain-tag">Computational Social Science</span>
+      </div>
+    </div>
+
+    <div class="cfp-tracks">
+
+      <div class="track-card">
+        <h3>Knowledge &amp; Mechanism Modeling</h3>
+        <ul>
+          <li>Incorporating domain knowledge, theories, and rules</li>
+          <li>Characterizing persona, roles, preferences, and beliefs</li>
+          <li>Capturing interaction and collective behavior</li>
+          <li>Memory dynamics, experience accumulation, self-evolution</li>
+        </ul>
+      </div>
+
+      <div class="track-card">
+        <h3>Simulation Evaluation &amp; Analysis</h3>
+        <ul>
+          <li>Evaluation criteria, rubrics, and protocols</li>
+          <li>Expert-in-the-loop evaluation, cost-effective annotation</li>
+          <li>Intervention analysis of policies and treatments</li>
+          <li>Phenomenon discovery and hypothesis generation</li>
+          <li>Human-agent interaction and behavioral impact analysis</li>
+        </ul>
+      </div>
+
+      <div class="track-card">
+        <h3>Safety, Ethics &amp; Accountability</h3>
+        <ul>
+          <li>Risk taxonomies, safety assurance and evaluation</li>
+          <li>Bias, fairness, stereotypes, and differential impacts</li>
+          <li>Privacy, consent, and sensitive data protection</li>
+          <li>Ethical use of simulated human or community proxies</li>
+          <li>Misuse risks: manipulation, fraud, surveillance, etc.</li>
+          <li>Transparency, auditability, and expert oversight</li>
+        </ul>
+      </div>
+
+      <div class="track-card">
+        <h3>Benchmarks, Datasets &amp; Infrastructure</h3>
+        <ul>
+          <li>Domain-specific datasets, benchmarks, evaluation suites</li>
+          <li>Platforms, toolkits, APIs, and software systems</li>
+          <li>Reproducibility standards and reporting protocols</li>
+        </ul>
+      </div>
+
+    </div><!-- /cfp-tracks -->
+
+    <div class="submission-box">
+      <h3>Submission Guidelines</h3>
+      <ul>
+        <li>
+          Papers must follow the <strong>ACM CIKM 2026 template</strong> and be
+          <strong>4–8 pages</strong> in length, excluding references. There is no distinction
+          between long and short papers; authors may choose the appropriate length.
+        </li>
+        <li>
+          All submissions undergo <strong>double-blind peer review</strong> (at least 3 reviewers
+          per paper, without COI), evaluated on relevance, novelty, and technical quality.
+          Papers must be properly anonymized.
+        </li>
+        <li>
+          Submit via <strong>EasyChair</strong> under the LASS track. [Link TBD]
+        </li>
+        <li>
+          All accepted papers will be presented <strong>orally</strong> at the workshop,
+          followed by moderated Q&amp;A.
+        </li>
+        <li>
+          Accepted papers are eligible for <strong>optional publication</strong> in the workshop
+          proceedings, and (subject to authors' consent) for <strong>fast-track recommendation</strong>
+          to the <em>Journal of Computer Science and Technology</em> (JCST, CCF-B).
+        </li>
+        <li>
+          A <strong>"Best LASS Paper Award"</strong> with formal certificates will be presented
+          at the closing ceremony.
+        </li>
+        <li>
+          We anticipate receiving <strong>30–40 submissions</strong> and accepting approximately
+          <strong>10–15 papers</strong>, drawing <strong>30–50 participants</strong> from AI, NLP,
+          HCI, social science, healthcare, education, and related communities.
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Keynote Speakers ───────────────────────────────────── -->
+<div class="section-alt" id="speakers">
+  <div class="section">
+    <h2 class="section-title">Keynote Speakers</h2>
+    <p style="margin-bottom:36px; color:var(--text-muted); font-size:0.95rem;">
+      We are honored to have the following keynote speakers. Talk titles and abstracts will be
+      announced soon.
+    </p>
+
+    <div class="speakers-grid">
+
+      <div class="speaker-card">
+        <div class="speaker-photo-placeholder">YL</div>
+        <div class="name">Yong Li</div>
+        <div class="affil">Tsinghua University</div>
+        <div class="talk-title">Talk title TBD</div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-photo-placeholder">PL</div>
+        <div class="name">Paul Liang</div>
+        <div class="affil">MIT</div>
+        <div class="talk-title">Talk title TBD</div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-photo-placeholder">XC</div>
+        <div class="name">Xu Chen</div>
+        <div class="affil">Renmin University of China</div>
+        <div class="talk-title">Talk title TBD</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── Program ────────────────────────────────────────────── -->
+<section id="program">
+  <div class="section">
+    <h2 class="section-title">Program</h2>
+    <p style="color:var(--text-muted); margin-bottom:28px; font-size:0.95rem;">
+      Half-day workshop · November 8, 2026 · Rome, Italy.
+      The schedule is preliminary and subject to adjustment.
+    </p>
+
+    <table class="program-table">
+      <tbody>
+
+        <tr class="prog-row-shade">
+          <td class="prog-time">08:30 – 08:40</td>
+          <td>
+            <div class="prog-title special">Opening Remarks</div>
+            <div class="prog-detail">Workshop Co-Chairs</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="prog-time">08:40 – 09:10</td>
+          <td>
+            <div class="prog-title">Keynote Talk #1</div>
+            <div class="prog-detail">30-min talk + Q&amp;A · Speaker TBD</div>
+          </td>
+        </tr>
+
+        <tr class="prog-row-shade">
+          <td class="prog-time">09:10 – 10:20</td>
+          <td>
+            <div class="prog-title">Paper Session #1</div>
+            <div class="prog-detail">Oral presentations + moderated Q&amp;A</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="prog-time">10:20 – 10:30</td>
+          <td>
+            <div class="prog-title special">Coffee Break</div>
+          </td>
+        </tr>
+
+        <tr class="prog-row-shade">
+          <td class="prog-time">10:30 – 11:00</td>
+          <td>
+            <div class="prog-title">Keynote Talk #2</div>
+            <div class="prog-detail">30-min talk + Q&amp;A · Speaker TBD</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="prog-time">11:00 – 12:20</td>
+          <td>
+            <div class="prog-title">Paper Session #2</div>
+            <div class="prog-detail">Oral presentations + moderated Q&amp;A</div>
+          </td>
+        </tr>
+
+        <tr class="prog-row-shade">
+          <td class="prog-time">12:20 – 12:30</td>
+          <td>
+            <div class="prog-title special">Awards &amp; Closing Remarks</div>
+            <div class="prog-detail">Best LASS Paper Award ceremony</div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ── Organizers ─────────────────────────────────────────── -->
+<div class="section-alt" id="organizers">
+  <div class="section">
+    <h2 class="section-title">Organizers</h2>
+
+    <div class="organizers-grid">
+
+      <div class="org-card">
+        <img class="org-photo" src="assets/yige.jpg" alt="Yige Yuan"
+             onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>YY</div>'">
+        <div class="org-info">
+          <div class="org-name">Yige Yuan</div>
+          <div class="org-affil">University of Washington (Postdoc)</div>
+          <a href="https://yuanyige.github.io" target="_blank">Homepage</a>
+        </div>
+      </div>
+
+      <div class="org-card">
+        <div class="org-photo-placeholder">HG</div>
+        <div class="org-info">
+          <div class="org-name">Haowen Gao</div>
+          <div class="org-affil">ICT, Chinese Academy of Sciences</div>
+        </div>
+      </div>
+
+      <div class="org-card">
+        <img class="org-photo" src="assets/bingbing.jpg" alt="Bingbing Xu"
+             onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>BX</div>'">
+        <div class="org-info">
+          <div class="org-name">Bingbing Xu</div>
+          <div class="org-affil">ICT, Chinese Academy of Sciences</div>
+          <a href="https://bingbing-x.github.io" target="_blank">Homepage</a>
+        </div>
+      </div>
+
+      <div class="org-card">
+        <img class="org-photo" src="assets/liang.jpg" alt="Liang Pang"
+             onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>LP</div>'">
+        <div class="org-info">
+          <div class="org-name">Liang Pang</div>
+          <div class="org-affil">ICT, Chinese Academy of Sciences</div>
+          <a href="https://pl8787.github.io" target="_blank">Homepage</a>
+        </div>
+      </div>
+
+      <div class="org-card">
+        <div class="org-photo-placeholder">SG</div>
+        <div class="org-info">
+          <div class="org-name">Shasha Guo</div>
+          <div class="org-affil">ICT, Chinese Academy of Sciences</div>
+        </div>
+      </div>
+
+      <div class="org-card">
+        <div class="org-photo-placeholder">YZ</div>
+        <div class="org-info">
+          <div class="org-name">Yu Zhao</div>
+          <div class="org-affil">ICT, Chinese Academy of Sciences</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ── LASS 2025 Archive ───────────────────────────────────── -->
+<div class="section-alt" id="archive">
+  <div class="section">
+    <h2 class="section-title">LASS 2025 — Accepted Papers &amp; Awards</h2>
+    <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:32px;">
+      The 1st Workshop on LLM Agents for Social Simulation was held at <strong>CIKM 2025, Seoul, South Korea</strong>.
+      8 papers were accepted from 15 submissions. Three papers received the
+      <strong>LASS Outstanding Paper Award</strong>.
+    </p>
+
+    <!-- Outstanding Paper Awards -->
+    <div class="award-block">
+      <div class="award-heading">
+        <span class="award-icon">🏆</span> LASS 2025 Outstanding Paper Award
+      </div>
+      <div class="award-papers">
+
+        <div class="award-paper-card">
+          <div class="award-badge">Outstanding Paper</div>
+          <div class="award-paper-title">
+            <a href="https://arxiv.org/abs/2511.10384" target="_blank">
+              Simulating Misinformation Propagation in Social Networks using Large Language Models
+            </a>
+          </div>
+        </div>
+
+        <div class="award-paper-card">
+          <div class="award-badge">Outstanding Paper</div>
+          <div class="award-paper-title">
+            <a href="https://arxiv.org/abs/2402.04559" target="_blank">
+              Can Large Language Model Agents Simulate Human Trust Behavior?
+            </a>
+          </div>
+        </div>
+
+        <div class="award-paper-card">
+          <div class="award-badge">Outstanding Paper</div>
+          <div class="award-paper-title">
+            <a href="https://arxiv.org/abs/2511.01891" target="_blank">
+              Multi-Personality Generation of LLMs at Decoding-time
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /award-block -->
+
+    <!-- Full Accepted Papers List -->
+    <h3 style="margin:40px 0 16px; font-size:1.05rem; font-weight:600; color:var(--text-main);">
+      All Accepted Papers
+    </h3>
+    <div class="archive-list">
+
+      <div class="archive-item">
+        <div class="archive-meta">
+          <span class="archive-award-tag">🏆 Outstanding</span>
+        </div>
+        <a class="archive-title" href="https://arxiv.org/abs/2511.10384" target="_blank">
+          Simulating Misinformation Propagation in Social Networks using Large Language Models
+        </a>
+      </div>
+
+      <div class="archive-item">
+        <div class="archive-meta">
+          <span class="archive-award-tag">🏆 Outstanding</span>
+        </div>
+        <a class="archive-title" href="https://arxiv.org/abs/2402.04559" target="_blank">
+          Can Large Language Model Agents Simulate Human Trust Behavior?
+        </a>
+      </div>
+
+      <div class="archive-item">
+        <div class="archive-meta">
+          <span class="archive-award-tag">🏆 Outstanding</span>
+        </div>
+        <a class="archive-title" href="https://arxiv.org/abs/2511.01891" target="_blank">
+          Multi-Personality Generation of LLMs at Decoding-time
+        </a>
+      </div>
+
+      <div class="archive-item">
+        <a class="archive-title" href="https://arxiv.org/abs/2412.16216" target="_blank">
+          GMoE: Empowering LLMs Fine-Tuning via MoE Graph Collaboration
+        </a>
+      </div>
+
+      <div class="archive-item">
+        <a class="archive-title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5273205" target="_blank">
+          DuST: Dual-Stage Tuning of LLMs for Next-Post-Topic Prediction in Social Media Bots
+        </a>
+      </div>
+
+      <div class="archive-item">
+        <a class="archive-title" href="https://openreview.net/forum?id=C3NTJpNCPw" target="_blank">
+          Rethinking Implicit Hate Speech Detection: Focusing on Latent Hate Components via Structured Argumentation
+        </a>
+      </div>
+
+      <div class="archive-item">
+        <a class="archive-title" href="https://openreview.net/forum?id=oYtpOy4JIu" target="_blank">
+          Beyond Single-expert Recommenders: Collective Intelligence through a Network of Experts
+        </a>
+      </div>
+
+      <div class="archive-item">
+        <a class="archive-title" href="https://openreview.net/forum?id=BtX2oclfp9" target="_blank">
+          MARS: A Multi-Agent Simulation Framework for Rumor Propagation on Social Media
+        </a>
+      </div>
+
+    </div><!-- /archive-list -->
+  </div>
+</div>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer>
+  <p>
+    &copy; 2026 The 2nd Workshop on LLM Agents for Social Simulation (LASS) &nbsp;·&nbsp;
+    Co-located with <a href="https://cikm2026.diag.uniroma1.it" target="_blank">CIKM 2026</a>,
+    Rome, Italy
+  </p>
+  <p style="margin-top:8px;">
+    Contact: <a href="mailto:yuanyige923@gmail.com">Yige Yuan</a> &nbsp;·&nbsp; <a href="mailto:gaohaowen23s@ict.ac.cn">Haowen Gao</a>
+  </p>
+</footer>
+
+<script>
+(function() {
+
+  /* ── 汉堡菜单 ─────────────────────────────────────────── */
+  var burger = document.getElementById('nav-hamburger');
+  var navLinks = document.getElementById('nav-links');
+
+  burger.addEventListener('click', function() {
+    var isOpen = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // 点击链接后关闭菜单
+  navLinks.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+    });
+  });
+
+  /* ── 主题切换 ─────────────────────────────────────────── */
+  var btn  = document.getElementById('theme-toggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('lass-theme') || 'dark';
+  applyTheme(saved);
+
+  btn.addEventListener('click', function() {
+    var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+    localStorage.setItem('lass-theme', next);
+  });
+
+  function applyTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    btn.textContent = theme === 'light' ? '🌙' : '☀️';
+  }
+
+  /* ── 导航高亮 ─────────────────────────────────────────── */
+  var sections = ['overview','dates','cfp','speakers','program','organizers','archive'];
+  var links = {};
+  sections.forEach(function(id) {
+    var el = document.querySelector('#nav-links a[href="#' + id + '"]');
+    if (el) links[id] = el;
+  });
+
+  function onScroll() {
+    var scrollY = window.scrollY + 80;
+    var current = sections[0];
+    sections.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) current = id;
+    });
+    Object.keys(links).forEach(function(id) {
+      links[id].classList.toggle('active', id === current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+})();
+</script>
+
+</body>
+</html>
