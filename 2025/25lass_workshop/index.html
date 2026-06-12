@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href=".">
+    <meta charset="UTF-8">
+    <title>LASS-workshop</title>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="stylesheet" href="assets/main.css"/>
+
+    <!-- 全局统一字体和段落缩进／对齐 -->
+    <style>
+    .top-left h1{
+        /* 随屏幕宽度缩放，最小 22px，最大 36px */
+        font-size: clamp(1.375rem, 4vw + 0.5rem, 2.25rem);
+        line-height: 1.25;
+        margin: 0;
+        word-break: break-word;
+    }
+        
+      /* 正文字体：可根据需要替换为自己喜欢的字体 */
+      body,
+      p, li, dt, dd {
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* 统一段落缩进：首行缩进 2em；段落之间自动分隔 */
+      p,
+      li {
+        text-indent: 2em;
+        margin: 0 0 1em 0;
+      }
+
+      /* 定义标题与正文对齐保持左对齐 */
+      h1, h2, h3, h4 {
+        font-family: Arial, sans-serif;
+        text-align: left;
+        margin: 1em 0 0.5em 0;
+      }
+
+      /* 调整标题字体大小 */
+      h1 {
+        font-size: 2rem; /* 原来较大，现调小为2rem */
+      }
+      h2 {
+        font-size: 1.5rem; /* 统一二级标题为1.5rem */
+      }
+
+      /* 列表、定义列表项同样首行缩进、统一外边距 */
+      ul, ol {
+        padding-left: 2em;
+        margin: 0 0 1em 0;
+      }
+      dl {
+        padding-left: 2em;
+        margin: 0 0 1em 0;
+      }
+      dt, dd {
+        margin: 0;
+      }
+
+      /* 定制二级标题下的左侧装饰 */
+      .section-decor {
+        color: #222;
+        border-left: 4px solid #666;
+        padding-left: 12px;
+      }
+    </style>
+</head>
+
+<body>
+
+    <div class="banner">
+        <img src="assets/new.jpg" alt="Conference Template Banner">
+        <div class="top-left">
+            <h1>Workshop on LLM Agents for Social Simulation</h1>
+        </div>
+        <div class="bottom-right">
+            November 14, 2025 <br> Seoul, Korea
+        </div>
+    </div>
+
+    <table class="navigation">
+        <tr>
+            <td class="navigation"><a class="current" title="Conference Home Page" href=".">Home</a></td>
+            <td class="navigation"><a title="Committee" href="registration">Committee</a></td>
+            <td class="navigation"><a title="Conference Program" href="program">Program</a></td>
+            <td class="navigation"><a title="Conference Flyer" href="flyer">Call for Papers</a></td>
+            <td class="navigation"><a title="Accepted Papers" href="#papers">Accepted Papers</a></td>
+        </tr>
+    </table>
+
+    <h2>The 1st Workshop on LLM Agents for Social Simulation</h2>
+    <p>
+        Social simulation has long played a crucial role in exploring the mechanisms underlying human behavior and societal structures.
+        Traditional social simulation relies on rule-based or statistical models, which makes it difficult to capture the complexity and variability of the real world.
+        With the emergence and rapid development of large language model (LLM), new frontiers have been opened toward leveraging LLMs as agent to model human behavior and interactions.
+        This cutting-edge direction has gained significant attention and demonstrated promising results, not only advancing research across a wide range of social science disciplines, but also enabling practical applications in role-playing scenarios.
+        However, this field still faces multiple challenges, such as capturing real-world social phenomena, eliminating bias or ethical considerations, and ensuring usability and reliability.
+        This workshop on LLM Agent for Social Simulation aims to bring together researchers and practitioners from diverse backgrounds to foster interdisciplinary collaboration, address key challenges, explore cutting-edge technologies, and chart promising future directions in this rapidly evolving field.
+    </p>
+
+    <h2 class="section-decor">Important Dates</h2>
+    <dl>
+      <dt><strong>Submission Open</strong></dt>
+      <dd>25 July, 2025</dd>
+
+      <dt><strong>Submission Deadline</strong></dt>
+      <dd>15 September, 2025</dd>
+
+      <dt><strong>Paper Acceptance Notification</strong></dt>
+      <dd>30 September, 2025</dd>
+
+      <dt><strong>Camera-Ready Submission</strong></dt>
+      <dd>01 November, 2025</dd>
+    </dl>
+
+    <h2 style="font-size: 24px; color: #222; border-left: 4px solid #666; padding-left: 8px; margin-bottom: 16px;">Organizers</h2>
+<ul>
+  <li><strong>Yige Yuan</strong> — State Key Laboratory of AI Safety, Institute of Computing Technology, Chinese Academy of Sciences &amp; University of Chinese Academy of Sciences
+    (<a href="https://yuanyige.github.io" target="_blank">Homepage</a>)
+  </li>
+  <li><strong>Junkai Zhou</strong> — State Key Laboratory of AI Safety, Institute of Computing Technology, Chinese Academy of Sciences &amp; University of Chinese Academy of Sciences</li>
+  <li><strong>Bingbing Xu</strong> — State Key Laboratory of AI Safety, Institute of Computing Technology, Chinese Academy of Sciences
+    (<a href="https://bingbing-x.github.io" target="_blank">Homepage</a>)
+  </li>
+  <li><strong>Liang Pang</strong> — State Key Laboratory of AI Safety, Institute of Computing Technology, Chinese Academy of Sciences
+    (<a href="https://pl8787.github.io" target="_blank">Homepage</a>)
+  </li>
+  <li><strong>Du Su</strong> — State Key Laboratory of AI Safety, Institute of Computing Technology, Chinese Academy of Sciences</li>
+  <li><strong>An Zhang</strong> — School of Information Science and Technology, University of Science and Technology of China
+    (<a href="https://anzhang314.github.io/index.html" target="_blank">Homepage</a>)
+  </li>
+  <li><strong>Teng Xiao</strong> — Allen Institute for AI &amp; University of Washington
+    (<a href="https://tengxiao1.github.io" target="_blank">Homepage</a>)
+  </li>
+  <li><strong>Fengli Xu</strong> — Tsinghua University
+    (<a href="https://fenglixu.github.io" target="_blank">Homepage</a>)
+  </li>
+  <li><strong>Zhaochun Ren</strong> — Leiden University
+    (<a href="https://renzhaochun.github.io" target="_blank">Homepage</a>)
+  </li>
+  <li><strong>Xu Chen</strong> — Renmin University of China
+    (<a href="http://ai-engine-lab.com" target="_blank">Homepage</a>)
+  </li>
+</ul>
+
+    <h2 class="section-decor">Keynote Talks</h2>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; margin-top: 20px; text-align: center;">
+  
+<!-- Keynote Talk I --> 
+    <div style="max-width: 250px;">     
+        <img src="assets/huang.png" alt="Junming Huang" style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">     
+        <h3 style="color: #0073e6; margin-top: 16px;">Keynote Talk I</h3>     <p style="font-weight: bold; margin-bottom: 4px;">Junming Huang</p>     
+        <p style="margin: 0;">Princeton University</p>     
+        <p style="font-style: italic; margin-top: 8px;">Research Scientist</p>   
+    </div>    
+    <!-- Keynote Talk II -->  
+    <div style="max-width: 250px;">     
+        <img src="assets/wei.png" alt="Zhongyu Wei" style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">     
+        <h3 style="color: #0073e6; margin-top: 16px;">Keynote Talk II</h3>     
+        <p style="font-weight: bold; margin-bottom: 4px;">Zhongyu Wei</p>     
+        <p style="margin: 0;">Fudan University</p>     
+        <p style="font-style: italic; margin-top: 8px;">Associate Professor</p>  
+    </div> 
+    </div>
+
+
+    <h2 id="papers" class="section-decor">Accepted Papers</h2>
+
+    <p style="text-indent:0;">
+        15 papers were submitted; 8 were accepted. Three papers received the
+        <strong>LASS Outstanding Paper Award</strong>.
+    </p>
+
+    <!-- Outstanding Paper Awards -->
+    <div style="background:#fffbea; border:1px solid #e8c84a; border-radius:8px; padding:16px 20px; margin:16px 0 24px 0;">
+        <p style="text-indent:0; margin-bottom:10px; font-weight:bold; color:#7a5c00;">🏆 LASS Outstanding Paper Award</p>
+        <ol style="margin:0; padding-left:1.5em;">
+            <li style="margin-bottom:6px;">
+                <a href="https://arxiv.org/abs/2511.10384" target="_blank">Simulating Misinformation Propagation in Social Networks using Large Language Models</a>
+            </li>
+            <li style="margin-bottom:6px;">
+                <a href="https://arxiv.org/abs/2402.04559" target="_blank">Can Large Language Model Agents Simulate Human Trust Behavior?</a>
+            </li>
+            <li style="margin-bottom:6px;">
+                <a href="https://arxiv.org/abs/2511.01891" target="_blank">Multi-Personality Generation of LLMs at Decoding-time</a>
+            </li>
+        </ol>
+    </div>
+
+    <!-- All Accepted Papers -->
+    <ol style="padding-left:1.5em;">
+        <li style="margin-bottom:8px;">
+            <a href="https://arxiv.org/abs/2511.10384" target="_blank">Simulating Misinformation Propagation in Social Networks using Large Language Models</a>
+            &nbsp;<strong style="color:#7a5c00;">[Outstanding]</strong>
+        </li>
+        <li style="margin-bottom:8px;">
+            <a href="https://arxiv.org/abs/2402.04559" target="_blank">Can Large Language Model Agents Simulate Human Trust Behavior?</a>
+            &nbsp;<strong style="color:#7a5c00;">[Outstanding]</strong>
+        </li>
+        <li style="margin-bottom:8px;">
+            <a href="https://arxiv.org/abs/2511.01891" target="_blank">Multi-Personality Generation of LLMs at Decoding-time</a>
+            &nbsp;<strong style="color:#7a5c00;">[Outstanding]</strong>
+        </li>
+        <li style="margin-bottom:8px;">
+            <a href="https://arxiv.org/abs/2412.16216" target="_blank">GMoE: Empowering LLMs Fine-Tuning via MoE Graph Collaboration</a>
+        </li>
+        <li style="margin-bottom:8px;">
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5273205" target="_blank">DuST: Dual-Stage Tuning of LLMs for Next-Post-Topic Prediction in Social Media Bots</a>
+        </li>
+        <li style="margin-bottom:8px;">
+            <a href="https://openreview.net/forum?id=C3NTJpNCPw" target="_blank">Rethinking Implicit Hate Speech Detection: Focusing on Latent Hate Components via Structured Argumentation</a>
+        </li>
+        <li style="margin-bottom:8px;">
+            <a href="https://openreview.net/forum?id=oYtpOy4JIu" target="_blank">Beyond Single-expert Recommenders: Collective Intelligence through a Network of Experts</a>
+        </li>
+        <li style="margin-bottom:8px;">
+            <a href="https://openreview.net/forum?id=BtX2oclfp9" target="_blank">MARS: A Multi-Agent Simulation Framework for Rumor Propagation on Social Media</a>
+        </li>
+    </ol>
+
+    <footer>
+        &copy; Workshop on LASS
+    </footer>
+
+</body>
+</html>
