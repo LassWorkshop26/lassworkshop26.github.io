@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LASS 2026 — Call for Papers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --navy-2: #143052;
+      --ink: #1a2332;
+      --muted: #5a6577;
+      --line: #d5dbe4;
+      --paper: #f4f6f9;
+      --accent: #9b2c1f;
+      --accent-soft: #f9f1ef;
+      --gold: #b08d57;
+      --gold-soft: #f3ebe0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      background: #c8ced8; color: var(--ink);
+      display: flex; justify-content: center;
+      padding: 24px 12px 48px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .poster {
+      width: 420px; background: #fff;
+      box-shadow: 0 12px 40px rgba(11, 31, 58, 0.22);
+      display: flex; flex-direction: column;
+    }
+
+    /* —— Header: title is the visual peak —— */
+    .header {
+      color: #fff; padding: 9px 10px 8px;
+      display: grid; grid-template-columns: 1fr 52px; gap: 7px;
+      align-items: start; position: relative;
+      background:
+        linear-gradient(105deg, rgba(8, 18, 36, 0.9) 0%, rgba(11, 31, 58, 0.74) 52%, rgba(11, 31, 58, 0.58) 100%),
+        url("../assets/rome-day.jpg") center 42% / cover no-repeat;
+    }
+    .header::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), #e8d5a8 45%, transparent);
+    }
+    .header > * { position: relative; z-index: 1; }
+    .eyebrow {
+      font-size: 7px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 3px;
+    }
+    .header h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 13.5px; font-weight: 700; line-height: 1.2;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+    }
+    .header h1 .tag { white-space: nowrap; }
+    .header .theme {
+      margin-top: 3px; font-size: 9.5px; font-weight: 600; color: #e8d5a8; line-height: 1.25;
+    }
+    .header .theme .ss {
+      color: #fff; font-weight: 800;
+    }
+    .header .theme .sub {
+      display: block; font-size: 8.5px; font-weight: 600;
+      color: rgba(232, 213, 168, 0.85); margin-top: 1px;
+    }
+    .meta {
+      margin-top: 4px; display: flex; flex-wrap: wrap; align-items: center;
+      font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.92);
+    }
+    .meta span + span::before {
+      content: "·"; margin: 0 5px; opacity: 0.45; font-weight: 400;
+    }
+    .contact {
+      margin-top: 4px; display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0 5px;
+      background: rgba(8, 18, 36, 0.55); border: 1px solid rgba(232, 213, 168, 0.45);
+      padding: 2px 6px; font-size: 7.5px; font-weight: 700; color: #e8d5a8;
+    }
+    .contact .k {
+      font-size: 7px; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+    }
+    .contact .sep { opacity: 0.4; font-weight: 400; color: #fff; }
+    .qr-box { text-align: center; }
+    .qr-box img {
+      width: 48px; height: 48px; background: #fff; padding: 2px; display: block;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .qr-box .cap {
+      margin-top: 2px; font-size: 6.5px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .body {
+      padding: 4px 10px 3px;
+      display: flex; flex-direction: column; gap: 2px;
+    }
+
+    /* Deadline: secondary to title, not competing */
+    .deadline {
+      display: grid; grid-template-columns: 1fr auto; gap: 2px 8px;
+      align-items: baseline;
+      background: var(--accent-soft); border: 1px solid #e8cfc8;
+      border-left: 3px solid var(--accent);
+      padding: 3px 6px;
+    }
+    .deadline .left { display: flex; align-items: baseline; gap: 5px; flex-wrap: nowrap; }
+    .deadline .label {
+      font-size: 7.5px; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); white-space: nowrap;
+    }
+    .deadline .value {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 12.5px; font-weight: 700; color: var(--navy); line-height: 1; white-space: nowrap;
+    }
+    .deadline .hint { font-size: 8px; color: var(--muted); white-space: nowrap; }
+    .deadline .url {
+      grid-column: 1 / -1;
+      font-size: 7.5px; font-weight: 700; color: var(--accent);
+      line-height: 1.2; letter-spacing: -0.01em;
+    }
+    .deadline .url em {
+      font-style: normal; font-weight: 600;
+      font-size: 7px; color: var(--muted); margin-left: 4px;
+    }
+
+    .intro {
+      font-size: 8.5px; line-height: 1.3; color: #3a4556;
+    }
+    .intro strong { color: var(--navy); }
+    .intro .focus {
+      color: var(--accent); font-weight: 800;
+    }
+
+    .sec {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 10.5px; font-weight: 700; color: var(--navy);
+      border-bottom: 1.5px solid var(--navy); padding-bottom: 0; margin-bottom: 2px;
+    }
+    .sec span {
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 7px; font-weight: 700; color: var(--muted);
+      letter-spacing: 0.06em; text-transform: uppercase; margin-left: 4px;
+    }
+
+    .cfp-hook {
+      font-size: 10px; font-weight: 800; color: var(--navy);
+      line-height: 1.2; margin-bottom: 3px;
+      white-space: nowrap; letter-spacing: -0.02em;
+    }
+    .cfp-hook em {
+      font-style: normal; color: var(--accent); font-size: 10px;
+    }
+
+    /* Domains clearly smaller than CFP hook */
+    .domains {
+      background: #e8eef6; border: 1px solid #b8c6d8;
+      padding: 2px 5px 2px; margin-bottom: 2px;
+    }
+    .domains .lab {
+      font-size: 6.5px; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 1px;
+    }
+    .domains .row {
+      font-size: 7.5px; font-weight: 800; color: var(--navy);
+      line-height: 1.35; letter-spacing: 0.01em;
+    }
+    .domains .row + .row { margin-top: 0; }
+    .domains .sep { color: var(--gold); font-weight: 600; margin: 0 3px; }
+
+    .pillars {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+      margin-bottom: 2px;
+    }
+    .pillar {
+      background: var(--navy); color: #fff; padding: 3px 3px 2px;
+      border-top: 2px solid var(--gold); text-align: center;
+    }
+    .pillar .k {
+      font-size: 6px; font-weight: 700; letter-spacing: 0.04em;
+      text-transform: uppercase; color: #e8d5a8; line-height: 1;
+    }
+    .pillar .v {
+      font-size: 8px; font-weight: 800; line-height: 1.12; margin-top: 1px;
+    }
+
+    .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 3px; }
+    .track {
+      padding: 2px 4px 2px;
+      border-top: 2px solid var(--navy);
+      background: var(--paper);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .track h3 {
+      font-size: 8.5px; font-weight: 800; color: var(--navy);
+      margin-bottom: 1px; line-height: 1.1;
+    }
+    .track ul { list-style: none; }
+    .track li {
+      font-size: 7.5px; line-height: 1.22; color: #3a4556;
+      padding-left: 6px; position: relative;
+    }
+    .track li::before {
+      content: "·"; position: absolute; left: 0; color: var(--accent); font-weight: 800;
+    }
+
+    .mid {
+      display: grid; grid-template-columns: 1.05fr 1fr; gap: 3px; align-items: stretch;
+    }
+    .dates-panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--navy);
+      padding: 3px 5px 3px;
+      height: 100%;
+      display: flex; flex-direction: column;
+    }
+    .dates { width: 100%; border-collapse: collapse; font-size: 8.5px; }
+    .dates th, .dates td { border-bottom: 1px solid var(--line); padding: 2.5px 2px; text-align: left; }
+    .dates th {
+      font-size: 7px; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--muted); border-bottom: 1.5px solid var(--navy);
+    }
+    .dates td:last-child { font-weight: 700; color: var(--navy-2); white-space: nowrap; }
+    .dates .hl td { background: var(--accent-soft); color: var(--accent); font-weight: 800; }
+    .note {
+      margin-top: auto; padding-top: 2px;
+      font-size: 6px; color: var(--muted); line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .why-panel {
+      background: var(--gold-soft);
+      border: 1px solid #e2d3bc;
+      border-left: 3px solid var(--gold);
+      padding: 3px 5px 2px;
+      height: 100%;
+      display: flex; flex-direction: column;
+    }
+    .why-panel .sec { border-bottom-color: var(--gold); }
+    .why-item {
+      display: grid; grid-template-columns: 15px 1fr; gap: 3px;
+      padding: 2px 0; border-bottom: 1px solid #e0d2bb;
+      align-items: start;
+    }
+    .why-item:last-child { border-bottom: none; }
+    .why-item .idx {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 10px; font-weight: 700; color: #9a7540; line-height: 1.1;
+    }
+    .why-item strong {
+      display: block; font-size: 8.5px; font-weight: 800; color: var(--navy); line-height: 1.1;
+    }
+    .why-item span {
+      display: block; font-size: 7px; line-height: 1.15; color: #3a4556;
+    }
+
+    .org-list {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+      background: #eef3f8; border: 1px solid #d7e0ea; padding: 2px 2px 2px;
+    }
+    .org {
+      display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0;
+    }
+    .org .ph {
+      width: 20px; height: 20px; border-radius: 50%; overflow: hidden;
+      border: 1px solid #c5ced9; background: #d9e0ea;
+    }
+    .org .ph img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
+    }
+    .org .name { font-size: 6.5px; font-weight: 800; color: var(--navy); line-height: 1.05; }
+    .org .affil { font-size: 5.5px; color: var(--muted); line-height: 1.05; }
+
+    .guide-bar {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px 8px;
+      background: var(--paper); border: 1px solid var(--line);
+      padding: 3px 6px; font-size: 8px; line-height: 1.25; color: #3a4556;
+    }
+    .guide-bar .sec { grid-column: 1 / -1; margin-bottom: 1px; }
+    .guide-bar li { margin-left: 10px; }
+    .guide-bar strong { color: var(--navy); }
+
+    .footer {
+      background: var(--navy); color: #fff; padding: 6px 10px;
+      display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    }
+    .footer .t { font-size: 10px; font-weight: 800; }
+    .footer .d { font-size: 7.5px; color: rgba(255,255,255,0.68); margin-top: 1px; }
+    .footer .url {
+      font-size: 7.5px; font-weight: 700; color: #e8d5a8;
+      text-align: right; line-height: 1.3; max-width: 175px;
+    }
+    .footer .url em {
+      display: block; font-style: normal; font-weight: 600;
+      font-size: 7px; color: rgba(255,255,255,0.65); margin-top: 1px;
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .poster { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="poster">
+
+  <header class="header">
+    <div>
+      <div class="eyebrow">2nd Edition · Co-located with ACM CIKM 2026</div>
+      <h1>The 2nd Workshop on LLM Agents for<br>Social Simulation&nbsp;<span class="tag">(LASS 2026)</span></h1>
+      <div class="theme">
+        LLM Agents × <span class="ss">Social Simulation</span>
+        <span class="sub">Fundamental Challenges &amp; Real-World Applications</span>
+      </div>
+      <div class="meta">
+        <span>Nov 8, 2026</span>
+        <span>Rome, Italy</span>
+        <span>Half-day Workshop</span>
+        <span>Call for Papers</span>
+      </div>
+      <div class="contact">
+        <span class="k">Contact</span>
+        <span>yuanyige923@gmail.com</span>
+        <span class="sep">·</span>
+        <span>gaohaowen23s@ict.ac.cn</span>
+      </div>
+    </div>
+    <div class="qr-box">
+      <img src="../assets/qr-openreview.png" alt="OpenReview QR">
+      <div class="cap">Scan to Submit</div>
+    </div>
+  </header>
+
+  <div class="body">
+
+    <p class="intro">
+      <span class="focus">Social simulation</span> matters where human studies face constraints —
+      sociology, psychology, medicine, and education. Rule-based models often oversimplify behavior;
+      <strong>LLM agents</strong> can interpret context, reason, and adapt in simulated societies.
+      LASS 2026 focuses on <strong>social simulation with LLM agents</strong>: faithfully modeled, rigorously
+      evaluated, safely governed, and applied in vertical domains.
+    </p>
+
+    <section>
+      <div class="sec">Call for Papers <span>Social simulation · thematic axes</span></div>
+      <div class="cfp-hook">
+        Papers on <em>LLM Agents for Social Simulation</em> — bridging AI &amp; vertical domains.
+      </div>
+      <div class="domains">
+        <div class="lab">Target communities &amp; domains</div>
+        <div class="row">
+          AI &amp; NLP<span class="sep">·</span>HCI<span class="sep">·</span>Social Science<span class="sep">·</span>Psychology<span class="sep">·</span>Healthcare
+        </div>
+        <div class="row">
+          Education<span class="sep">·</span>Public Governance<span class="sep">·</span>Economics &amp; Policy<span class="sep">·</span>Comp. Social Science
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="k">01</div>
+          <div class="v">Faithfully<br>Modeled</div>
+        </div>
+        <div class="pillar">
+          <div class="k">02</div>
+          <div class="v">Rigorously<br>Evaluated</div>
+        </div>
+        <div class="pillar">
+          <div class="k">03</div>
+          <div class="v">Safely<br>Governed</div>
+        </div>
+        <div class="pillar">
+          <div class="k">04</div>
+          <div class="v">Effectively<br>Applied</div>
+        </div>
+      </div>
+      <div class="tracks">
+        <div class="track">
+          <h3>Knowledge &amp; Mechanism Modeling</h3>
+          <ul>
+            <li>Domain knowledge, theories &amp; rules</li>
+            <li>Persona, roles, preferences &amp; beliefs</li>
+            <li>Interaction &amp; collective behavior</li>
+            <li>Memory, experience &amp; self-evolution</li>
+          </ul>
+        </div>
+        <div class="track">
+          <h3>Simulation Evaluation &amp; Analysis</h3>
+          <ul>
+            <li>Criteria, rubrics &amp; protocols</li>
+            <li>Expert-in-the-loop annotation</li>
+            <li>Policy / treatment intervention analysis</li>
+            <li>Phenomenon discovery &amp; impact</li>
+          </ul>
+        </div>
+        <div class="track">
+          <h3>Safety, Ethics &amp; Accountability</h3>
+          <ul>
+            <li>Risk taxonomies &amp; safety assurance</li>
+            <li>Bias, fairness &amp; differential impacts</li>
+            <li>Privacy, consent &amp; simulated proxies</li>
+            <li>Misuse, transparency &amp; oversight</li>
+          </ul>
+        </div>
+        <div class="track">
+          <h3>Benchmarks, Datasets &amp; Infrastructure</h3>
+          <ul>
+            <li>Domain datasets &amp; eval. suites</li>
+            <li>Platforms, toolkits, APIs &amp; systems</li>
+            <li>Reproducibility &amp; reporting</li>
+            <li>Large-scale / long-horizon infrastructure</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="deadline">
+      <div class="left">
+        <span class="label">Deadline</span>
+        <span class="value">August 30, 2026</span>
+        <span class="hint">AoE 23:59</span>
+      </div>
+      <div class="url">
+        openreview.net/group?id=ACM.org/CIKM/2026/Workshop/LASS
+        <em>· or scan QR above</em>
+      </div>
+    </div>
+
+    <div class="mid">
+      <section class="dates-panel">
+        <div class="sec">Important Dates <span>AoE 23:59</span></div>
+        <table class="dates">
+          <thead><tr><th>Milestone</th><th>Date</th></tr></thead>
+          <tbody>
+            <tr><td>Submission Open</td><td>July 22, 2026</td></tr>
+            <tr class="hl"><td>Submission Deadline</td><td>August 30, 2026</td></tr>
+            <tr><td>Acceptance Notification</td><td>September 22, 2026</td></tr>
+            <tr><td>Camera-Ready Due</td><td>October 15, 2026</td></tr>
+            <tr><td>Workshop Day</td><td>November 8, 2026</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Preliminary; may align with CIKM 2026 Workshop Chairs.</p>
+      </section>
+
+      <section class="why-panel">
+        <div class="sec">Our Advantages <span>Why submit</span></div>
+        <div class="why-item">
+          <div class="idx">01</div>
+          <div>
+            <strong>Best LASS Paper Award</strong>
+            <span>Certificate at the CIKM closing ceremony.</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="idx">02</div>
+          <div>
+            <strong>Guaranteed Oral Presentation</strong>
+            <span>Dedicated oral slot with moderated Q&amp;A for every accept.</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="idx">03</div>
+          <div>
+            <strong>Interdisciplinary Community</strong>
+            <span>~30–50 attendees across AI, NLP, HCI &amp; vertical domains.</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="idx">04</div>
+          <div>
+            <strong>Cross-Domain Scope</strong>
+            <span>From AI &amp; NLP to healthcare, education, policy &amp; social science.</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section>
+      <div class="sec">Organizers</div>
+      <div class="org-list">
+        <div class="org">
+          <div class="ph"><img src="../assets/yige.jpg" alt="Yige Yuan"></div>
+          <div class="name">Yige Yuan</div>
+          <div class="affil">U. Washington</div>
+        </div>
+        <div class="org">
+          <div class="ph"><img src="../assets/haowen.jpg" alt="Haowen Gao"></div>
+          <div class="name">Haowen Gao</div>
+          <div class="affil">ICT, CAS</div>
+        </div>
+        <div class="org">
+          <div class="ph"><img src="../assets/bingbing.jpg" alt="Bingbing Xu"></div>
+          <div class="name">Bingbing Xu</div>
+          <div class="affil">ICT, CAS</div>
+        </div>
+        <div class="org">
+          <div class="ph"><img src="../assets/liang.jpg" alt="Liang Pang"></div>
+          <div class="name">Liang Pang</div>
+          <div class="affil">ICT, CAS</div>
+        </div>
+        <div class="org">
+          <div class="ph"><img src="../assets/shasha.jpg" alt="Shasha Guo"></div>
+          <div class="name">Shasha Guo</div>
+          <div class="affil">ICT, CAS</div>
+        </div>
+        <div class="org">
+          <div class="ph"><img src="../assets/yuzhao.jpg" alt="Yu Zhao"></div>
+          <div class="name">Yu Zhao</div>
+          <div class="affil">ICT, CAS</div>
+        </div>
+        <div class="org">
+          <div class="ph"><img src="../assets/xiaoyan.jpg" alt="Xiaoyan Zhao"></div>
+          <div class="name">Xiaoyan Zhao</div>
+          <div class="affil">NUS</div>
+        </div>
+        <div class="org">
+          <div class="ph"><img src="../assets/anzhang.jpg" alt="An Zhang"></div>
+          <div class="name">An Zhang</div>
+          <div class="affil">USTC</div>
+        </div>
+        <div class="org">
+          <div class="ph"><img src="../assets/junming.jpg" alt="Junming Huang"></div>
+          <div class="name">Junming Huang</div>
+          <div class="affil">Princeton</div>
+        </div>
+        <div class="org">
+          <div class="ph"><img src="../assets/zhongyu.jpg" alt="Zhongyu Wei"></div>
+          <div class="name">Zhongyu Wei</div>
+          <div class="affil">Fudan</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-bar">
+      <div class="sec">Submission Guidelines</div>
+      <ul>
+        <li><strong>ACM CIKM 2026 template</strong>, 4–8 pages (excl. refs).</li>
+        <li><strong>Double-blind</strong> (≥3 reviewers); anonymize papers.</li>
+      </ul>
+      <ul>
+        <li>Submit via <strong>OpenReview</strong> (scan QR above).</li>
+        <li>All accepts get a dedicated <strong>oral</strong> slot.</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div>
+      <div class="t">Submit Your Paper · LASS @ CIKM 2026</div>
+      <div class="d">Rome · Nov 8, 2026 · Deadline Aug 30 (AoE)</div>
+    </div>
+    <div class="url">
+      OpenReview · Scan QR to submit
+      <em>ACM.org/CIKM/2026/Workshop/LASS</em>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
