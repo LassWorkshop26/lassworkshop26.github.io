@@ -231,7 +231,7 @@ html[data-theme="light"] #navbar a.active {
 #hero {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 540px;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
@@ -339,6 +339,38 @@ html[data-theme="light"] .hero-tag { color: #fff; }
 .hero-meta .sep { color: var(--accent); margin: 0 8px; transition: color 0.45s ease; }
 .hero-meta strong { color: var(--accent); font-weight: 600; transition: color 0.45s ease; }
 
+.hero-extend {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(212,168,67,0.9);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+}
+
+.hero-extend-badge {
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-shadow: none;
+}
+
+.hero-extend strong { color: #fff; font-weight: 800; }
+
 /* ── Section wrapper ─────────────────────────────────────── */
 .section {
   max-width: 1080px;
@@ -406,6 +438,29 @@ html[data-theme="light"] .hero-tag { color: #fff; }
 
 .date-card.highlight { border-left-color: var(--accent); }
 .date-card.highlight .value { color: var(--accent); }
+
+.date-card .value-old {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+
+.ext-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+html[data-theme="light"] .ext-tag { color: #fff; }
 
 /* ── Call for Papers ─────────────────────────────────────── */
 .cfp-intro {
@@ -860,9 +915,10 @@ footer a:hover { color: var(--text); }
   /* navbar handled by hamburger menu above */
   #theme-toggle { top: 8px; right: 10px; }
 
-  #hero { height: 380px; }
+  #hero { height: 420px; }
   .hero-content { padding: 0 24px 36px; }
   .hero-title { font-size: 1.5rem; }
+  .hero-extend { font-size: 0.8rem; padding: 7px 12px; }
 
   .section { padding: 52px 24px; }
 
